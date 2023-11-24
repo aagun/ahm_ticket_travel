@@ -9,9 +9,7 @@ CREATE TABLE ahmitjot_mstkotas (
 
 ALTER TABLE ahmitjot_mstkotas OWNER TO developer;
 
-CREATE SEQUENCE ahmitjot_mstkotas_seq
-    START WITH 1
-    INCREMENT BY 1;
+CREATE SEQUENCE ahmitjot_mstkotas_seq START WITH 1 INCREMENT BY 1 MINVALUE 1 OWNED BY ahmitjot_mstkotas.nid;
 
 ALTER TABLE ahmitjot_mstkotas_seq OWNER TO developer;
 
@@ -31,8 +29,6 @@ CREATE TABLE ahmitjot_msttickets (
 
 ALTER TABLE ahmitjot_msttickets OWNER TO developer;
 
-ALTER TABLE ONLY ahmitjot_mstkotas
-    ADD CONSTRAINT ahmitjot_mstkotas_pkey PRIMARY KEY (nid);
+ALTER TABLE ONLY ahmitjot_mstkotas ADD CONSTRAINT ahmitjot_mstkotas_pkey PRIMARY KEY (nid);
 
-ALTER TABLE ONLY public.ahmitjot_msttickets
-    ADD CONSTRAINT ahmitjot_msttickets_pkey PRIMARY KEY (vkey, vnoticket);
+ALTER TABLE ONLY public.ahmitjot_msttickets ADD CONSTRAINT ahmitjot_msttickets_pkey PRIMARY KEY (vkey, vnoticket);

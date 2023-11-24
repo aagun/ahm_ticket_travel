@@ -27,5 +27,4 @@ public interface AhmitjotMstkotasDao extends JpaRepository<AhmitjotMstkotas, Lon
 
     Optional<AhmitjotMstkotas> findByVcode(String destinationCode);
 
-    boolean existsByVcode(String vcode);
 }

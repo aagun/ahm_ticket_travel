@@ -48,14 +48,13 @@ public class AhmitjotMstticketsService {
             throw new ClientException("End Tanggal Pembelian tidak boleh kurang dari Start Tanggal Pembelian.");
         }
 
-        log.info(ticketSearchRequest.getKeyword().toUpperCase());
-
         Sort sort = Sort.by(Helpers.setOrderBy(ticketSearchRequest.getOrder()), setSort(ticketSearchRequest.getSort()));
         Pageable pageable = PageRequest.of(ticketSearchRequest.getOffset(), ticketSearchRequest.getLimit(), sort);
         Page<AhmitjotMsttickets> page = ahmitjotMstticketsDao
-                .findTicketsByDateAndKeyword(
+                .findByDbeliIsGreaterThanEqualAndDbeliIsLessThanEqualAndVnikContainingIgnoreCaseOrVnamaContainingIgnoreCase(
                         ticketSearchRequest.getDStartBeli(),
                         ticketSearchRequest.getDEndBeli(),
+                        ticketSearchRequest.getKeyword(),
                         ticketSearchRequest.getKeyword(),
                         pageable
                 );
@@ -159,8 +158,8 @@ public class AhmitjotMstticketsService {
 
     private static String setSort(String sort) {
         Map<String, String> MAPPED_FIELD = new HashMap<String, String>();
-        MAPPED_FIELD.put("id", "AhmitjotMstticketsPk.vkey");
-        MAPPED_FIELD.put("noticket", "AhmitjotMstticketsPk.vnoticket");
+        MAPPED_FIELD.put("id", "ahmitjotMstticketsPk.vkey");
+        MAPPED_FIELD.put("noticket", "ahmitjotMstticketsPk.vnoticket");
         MAPPED_FIELD.put("nik", "vnik");
         MAPPED_FIELD.put("nama", "vnama");
         MAPPED_FIELD.put("gender", "vgender");

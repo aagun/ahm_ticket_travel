@@ -27,7 +27,7 @@ public class AhmitjotMstkotas {
 
     @Id
     @SequenceGenerator(sequenceName = "ahmitjot_mstkotas_seq", name = "ahmitjot_mstkotas_gen", allocationSize = 1)
-    @GeneratedValue(generator = "ahmitjot_mstkotas_seq", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "ahmitjot_mstkotas_gen", strategy = GenerationType.SEQUENCE)
     @JsonProperty("id") @JsonAlias("id")
     private Long nid;
 
