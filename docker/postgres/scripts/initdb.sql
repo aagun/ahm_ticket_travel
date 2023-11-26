@@ -1,3 +1,4 @@
+CREATE DATABASE ahm_ticket_travel;
 
 CREATE TABLE ahmitjot_mstkotas (
     nid bigint NOT NULL,
