@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "8c057546-0f6c-430b-a042-3c601236b1b9",
+		"name": "AHM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10312432"
+	},
+	"item": [
+		{
+			"name": "Ticket Travel",
+			"item": [
+				{
+					"name": "Kota",
+					"item": [
+						{
+							"name": "Add New Kota",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kodeTujuan\": \"JKT-SBY\",\r\n    \"kotaAsal\": \"Jakarta\",\r\n    \"kotaTujuan\": \"Surabaya\",\r\n    \"status\": \"T\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/kotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"kotas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Kota",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/kotas?code=JKT-BDG",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"kotas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "JKT-BDG"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Kota",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"kodeTujuan\": \"JKT-BDGS\",\r\n    \"kotaAsal\": \"Jakarta\",\r\n    \"kotaTujuan\": \"Bandung\",\r\n    \"status\": \"T\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/kotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"kotas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Kota",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/kotas?code=JKT-BDGS",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"kotas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "JKT-BDGS"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Kotas",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"keyword\": \"jak\",\r\n  \"limit\": 10,\r\n  \"offset\": 0,\r\n  \"sort\": \"kodeTujuan\",\r\n  \"order\": \"asc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/kotas/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"kotas",
+										"search"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Add New Ticket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nik\": \"9999999999999999\",\r\n  \"nama\": \"John Doe\",\r\n  \"gender\": \"L\",\r\n  \"tanggalBerangkat\": \"2023-11-25\",\r\n  \"kodeTujuan\": \"JKT-SBY\",\r\n  \"nomorKursi\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/tickets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SearchTicket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"offset\": 0,\r\n  \"limit\": 10,\r\n  \"order\": \"asc\",\r\n  \"sort\": \"id\",\r\n  \"keyword\": \"john\",\r\n  \"startTanggalPembelian\": \"2023-01-24\",\r\n  \"endTanggalPembelian\": \"2023-11-25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/tickets/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Ticket",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/tickets?noticket=1234567890123457-AGN109126-23112450",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "noticket",
+											"value": "1234567890123457-AGN109126-23112450"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Ticket",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nik\": \"1234567890123457\",\r\n    \"noTicket\": \"1234567890123457-AGN109126-23112450\",\r\n    \"tanggalBerangkat\": \"2023-11-26\",\r\n    \"kodeTujuan\": \"JKT-SBY\",\r\n    \"nomorKursi\": \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/tickets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Ticket",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/tickets?noticket=1234567890123457-AGN109126-23112450",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "noticket",
+											"value": "1234567890123457-AGN109126-23112450"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
