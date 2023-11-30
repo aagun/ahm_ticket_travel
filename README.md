@@ -1,6 +1,6 @@
 # AHM Ticket Travel
 
-Aplikasi ini dibuat untuk memenuhi persyaratan techincal test kerja sebagai Fullstack Developer di PT. Astra Honda Motor
+Aplikasi ini dibuat untuk memenuhi persyaratan techincal test kerja untuk penempatan pengerjaan project di PT. Astra Honda Motor sebagai Fullstack Developer
 
 ## Features
 
